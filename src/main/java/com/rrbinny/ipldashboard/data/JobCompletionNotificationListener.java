@@ -33,7 +33,6 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
   public void afterJob(JobExecution jobExecution) {
     if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
       log.info("!!! JOB FINISHED! Time to verify the results");
-      // SELECT DISTINCT team1 FROM MATCH m UNION SELECT DISTINCT team2 from Match m
 
       Map<String, Team> teamData = new HashMap<>();
 
