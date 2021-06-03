@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+
+
 @RestController
 public class TeamController {
 
@@ -21,7 +23,7 @@ public class TeamController {
     @GetMapping("/teams/{teamName}")
     public Team getTeam(@PathVariable String teamName) {
       Team team = this.teamRepository.findByTeamName(teamName);
-      team.setMatches(this.matchRepository.getByTeam1OrTeam2OrderByDateDesc(teamName,teamName));
+      team.setMatches(this.matchRepository.findLatestMatchesbyTeam(teamName,4));
       return team;
     }
 }
