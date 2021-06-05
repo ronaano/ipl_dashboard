@@ -4,7 +4,7 @@ import {MatchSmallCard} from "../components/MatchSmallCard";
 
 export const TeamPage = () => {
 
-    const [team,setTeam] = useState();
+    const [team,setTeam] = useState({matches:[]});
 
     useEffect(
         () => {
@@ -21,10 +21,8 @@ export const TeamPage = () => {
     return (
         <div className="TeamPage">
             <h1>{team.teamName}</h1>
-            <MatchDetailCard/>
-            <MatchSmallCard/>
-            <MatchSmallCard/>
-            <MatchSmallCard/>
+            <MatchDetailCard match={team.matches[0]}/>
+            {team.matches.slice(1).map(match => <MatchSmallCard match={match}/>)}
         </div>
     );
 }
