@@ -1,0 +1,15 @@
+.MatchSmallCard {
+  padding:10px;
+  margin-bottom:20px;
+
+  .match-result {
+    margin-top:10px;
+  }
+
+  .additional-details {
+    text-align:right;
+    & > p {
+      margin-bottom: 20px;
+    }
+  }
+}
