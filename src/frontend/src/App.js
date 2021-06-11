@@ -1,5 +1,5 @@
 import './App.scss';
-import {BrowserRouter as Router, Route } from 'react-router-dom';
+import {HashRouter as Router, Route } from 'react-router-dom';
 import {TeamPage} from "./pages/TeamPage";
 import {MatchPage} from "./pages/MatchPage";
 import {HomePage} from "./pages/HomePage";
@@ -14,7 +14,7 @@ function App() {
                 <Route path="/teams/:teamName/matches/:year">
                     <MatchPage/>
                 </Route>
-                <Route path ="/teams">
+                <Route path ="/">
                     <HomePage/>
                 </Route>
         </Router>
